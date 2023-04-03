@@ -49,7 +49,7 @@ const addNewTodo = () => {
     todoInput.value = "";
     errorInfo.textContent = "";
     const todos = JSON.parse(localStorage.getItem("todos")) || [];
-    todos.push(newTodo.textContent);
+    todos.push(newTodo.textContent.replace("EDIT", ""));
     localStorage.setItem("todos", JSON.stringify(todos));
   } else {
     errorInfo.textContent = "Wpisz treść zadania!";
